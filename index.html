@@ -55,23 +55,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* Ensures images scale cleanly across all browsers */
             image-rendering: -webkit-optimize-contrast;
             image-rendering: auto;
-        }
-
-        /* Placeholder Style */
-        .coming-soon-placeholder {
-            background-color: #fdfcf8;
-            border: 2px dashed #d1d5db;
-            color: #9ca3af;
-            text-align: center;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
         }
 
         .logo-glow {
@@ -153,11 +139,8 @@
         <!-- TURMERIC -->
         <div id="collection" class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
             <div class="order-2 md:order-1 product-photo-container">
-                <div class="coming-soon-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mb-4 opacity-40"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
-                    <span class="brand-heading uppercase tracking-widest text-lg">Picture Coming Soon</span>
-                    <span class="text-sm opacity-60 italic mt-1">Currently Curing on the Rack</span>
-                </div>
+                <!-- Turmeric spot now has the "Honey and Oat 9" image -->
+                <img src="https://i.postimg.cc/Bb2DHJZ9/Honey-and-Oat-9.jpg" alt="Turmeric & Honey Soap">
             </div>
             <div class="order-1 md:order-2">
                 <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">The "Eye Roll" Bar</span>
@@ -184,7 +167,8 @@
                 </div>
             </div>
             <div class="product-photo-container">
-                <img src="https://i.postimg.cc/PN0DZ0Wx/Honey-and-Oat-1.jpg" alt="Honey & Oatmeal Soap">
+                <!-- Honey and Oatmeal spot now has the new "Honey and Oat 1" image -->
+                <img src="https://i.postimg.cc/kXgyrmDx/Honey_and_Oat_1.jpg" alt="Honey & Oatmeal Soap">
             </div>
         </div>
     </main>
