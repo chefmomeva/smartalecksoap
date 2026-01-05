@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Aleck Soap Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 1. ADOBE FONTS EMBED CODE -->
+    <link rel="stylesheet" href="https://use.typekit.net/pdf3ssm.css">
+    
+    <style>
+        :root {
+            --brand-heading: "custard", sans-serif;
+            --brand-body: "marydale", sans-serif; 
+        }
+
+        h1, h2, .brand-heading { 
+            font-family: var(--brand-heading);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        
+        body, p, span, h3 { 
+            font-family: var(--brand-body);
+            font-weight: 400;
+        }
+
+        .botanical-bg {
+            background-color: #064e3b; 
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23065f46' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4v-4H4v4H0v2h4v4h2v-4h4v-2H6zm30 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .btn-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+        }
+
+        .marydale-large {
+            font-size: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .product-photo-container {
+            aspect-ratio: 1 / 1;
+            background-color: #f5f5f5;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+        }
+
+        .product-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: auto;
+        }
+
+        /* Placeholder Style */
+        .coming-soon-placeholder {
+            background-color: #fdfcf8;
+            border: 2px dashed #d1d5db;
+            color: #9ca3af;
+            text-align: center;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        }
+    </style>
+</head>
+<body class="bg-[#fdfcf8] text-stone-900 leading-relaxed">
+
+    <!-- HEADER SECTION -->
+    <section class="botanical-bg text-white py-24 px-6 border-b-8 border-amber-900/20">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <div class="inline-block px-4 py-1 border border-emerald-400 text-emerald-300 text-sm uppercase tracking-[0.3em] mb-10 font-bold brand-heading">
+                Small Batch • Goat Milk • Tallow
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8 text-center md:text-left">
+                <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+                    <img src="https://i.postimg.cc/WFhDq7t6/Goat-Transparent.png" alt="Smart Aleck Goat Logo" class="w-full h-full object-contain logo-glow">
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl tracking-tight leading-none uppercase">
+                    Smart Aleck <br> Soap Company
+                </h1>
+            </div>
+
+            <p class="text-2xl md:text-3xl text-emerald-100 mb-10 opacity-90 text-center">
+                High-end botanical soaps with a side of sass.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-md md:max-w-none">
+                <a href="mailto:eva@smartalecksoap.com?subject=I've%20got%20a%20dirty%20mouth%20(Order%20Request)" class="bg-amber-100 text-emerald-950 px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-white transition-all btn-shadow text-center brand-heading text-lg">
+                    Order via Email
+                </a>
+                <a href="#collection" class="border border-emerald-400 text-white px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-emerald-800 transition-all text-center brand-heading text-lg">
+                    The Collection
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="py-20 bg-white border-b border-stone-100">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-xl uppercase tracking-[0.4em] text-amber-800 mb-4">Our Mission</h2>
+            <p class="text-4xl md:text-6xl max-w-3xl mx-auto leading-tight mb-16">
+                "Ingredients so pure, you could wash your mouth out."
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center">
+                    <div class="text-emerald-800 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 class="brand-heading uppercase tracking-widest text-lg mb-3">Food-Grade Base</h3>
+                    <p class="text-stone-600 marydale-large">We use restaurant-grade beef tallow and farm-fresh goat milk. If you wouldn't put it in your body, we won't put it on your skin.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-emerald-800 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C10 14.5 10.5 13 12 13s2 1.5 4.92 2c3.23.64 5.08 3 5.08 6"/></svg>
+                    </div>
+                    <h3 class="brand-heading uppercase tracking-widest text-lg mb-3">Zero Synthetics</h3>
+                    <p class="text-stone-600 marydale-large">Strictly no artificial colors, mica, or lab-created fragrances. We color with clays and botanicals; we scent with pure essential oils.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-emerald-800 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    </div>
+                    <h3 class="brand-heading uppercase tracking-widest text-lg mb-3">The Smart Way</h3>
+                    <p class="text-stone-600 marydale-large">Every bar is small-batch and cured for 6 weeks. It takes longer, but quality doesn't talk back—it speaks for itself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT COLLECTION -->
+    <main class="max-w-5xl mx-auto py-20 px-6">
+        
+        <!-- TURMERIC -->
+        <div id="collection" class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+            <div class="order-2 md:order-1 product-photo-container">
+                <div class="coming-soon-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mb-4 opacity-40"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+                    <span class="brand-heading uppercase tracking-widest text-lg">Picture Coming Soon</span>
+                    <span class="text-sm opacity-60 italic mt-1">Currently Curing on the Rack</span>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">The "Eye Roll" Bar</span>
+                <h2 class="text-4xl md:text-5xl mb-6 leading-tight uppercase">Turmeric & Honey</h2>
+                <p class="text-2xl text-stone-600 mb-6">
+                    A bright, golden bar designed for a glowing complexion. Crafted with our signature slow-churned tallow and a heavy dollop of raw honey.
+                </p>
+                <div class="flex items-center gap-4 text-3xl font-bold text-stone-800">
+                    <span>$8.00 / Full Bar</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- OATMEAL -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+            <div>
+                <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">The "Sassy Mouth" Bar</span>
+                <h2 class="text-4xl md:text-5xl mb-6 leading-tight uppercase">Honey & Oatmeal</h2>
+                <p class="text-2xl text-stone-600 mb-6">
+                    Our most moisturizing bar yet. Finely ground colloidal oatmeal provides a gentle scrub while goat milk proteins soothe dry, winter skin.
+                </p>
+                <div class="flex items-center gap-4 text-3xl font-bold text-stone-800">
+                    <span>$8.00 / Full Bar</span>
+                </div>
+            </div>
+            <div class="product-photo-container">
+                <img src="https://i.postimg.cc/PN0DZ0Wx/Honey-and-Oat-1.jpg" alt="Honey & Oatmeal Soap">
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-stone-900 text-white py-20 px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h3 class="text-4xl mb-6 uppercase">Ready to wash up?</h3>
+            <p class="text-stone-300 text-2xl mb-10">
+                We are currently selling via direct local order and email. Reach out to see what's currently clearing on the racks.
+            </p>
+            <a href="mailto:eva@smartalecksoap.com?subject=I've%20got%20a%20dirty%20mouth%20(Order%20Request)" class="text-3xl font-bold text-amber-200 border-b-2 border-amber-200 pb-1 hover:text-white transition-colors brand-heading">
+                eva@smartalecksoap.com
+            </a>
+            <div class="mt-16 pt-8 border-t border-stone-800 text-sm text-stone-500 uppercase tracking-widest brand-heading">
+                &copy; 2026 Smart Aleck Soap Company | Small Batch Specialists
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
