@@ -42,19 +42,12 @@
 
         .product-photo-container {
             aspect-ratio: 1 / 1;
-            background-color: #f5f5f5;
+            background-color: #f8f8f6;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #e5e7eb;
             border-radius: 4px;
-        }
-
-        .product-photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .logo-glow {
@@ -71,28 +64,36 @@
             margin-bottom: 0.5rem;
         }
 
-        .coming-soon-card {
-            border: 1px dashed #d1d5db;
-            padding: 2rem;
+        /* Toast Notification Styles */
+        #toast {
+            visibility: hidden;
+            min-width: 200px;
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            border-radius: 8px;
-            background: #fdfdfd;
-            transition: all 0.3s ease;
-        }
-        
-        .coming-soon-card:hover {
-            border-color: #065f46;
-            background: #f0fdf4;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 50;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-family: var(--brand-body);
         }
 
-        .legal-text {
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #a8a29e;
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
+
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
     </style>
 </head>
 <body class="bg-[#fdfcf8] text-stone-900 leading-relaxed">
+
+    <!-- Toast Notification -->
+    <div id="toast">Email Address Copied!</div>
 
     <!-- HEADER SECTION -->
     <section class="botanical-bg text-white py-16 md:py-24 px-6 border-b-8 border-amber-900/20">
@@ -115,9 +116,12 @@
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-md md:max-w-none">
-                <a href="mailto:eva@smartalecksoap.com" class="bg-amber-100 text-emerald-950 px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-white transition-all btn-shadow text-center brand-heading text-lg">
+                <button 
+                    onclick="copyEmail('eva@smartalecksoap.com', this)"
+                    class="bg-amber-100 text-emerald-950 px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-white transition-all btn-shadow text-center brand-heading text-lg"
+                >
                     Order via Email
-                </a>
+                </button>
                 <a href="#collection" class="border border-emerald-400 text-white px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-emerald-800 transition-all text-center brand-heading text-lg">
                     The Collection
                 </a>
@@ -125,7 +129,7 @@
         </div>
     </section>
 
-    <!-- THE STORY / MISSION -->
+    <!-- THE STORY -->
     <section class="py-20 bg-white border-b border-stone-100">
         <div class="max-w-4xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -154,8 +158,8 @@
 
         <!-- TURMERIC -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
-            <div class="product-photo-container">
-                <img src="https://i.postimg.cc/Bb2DHJZ9/Honey-and-Oat-9.jpg" alt="Turmeric & Honey Soap">
+            <div class="product-photo-container shadow-inner">
+                <img src="https://i.postimg.cc/Bb2DHJZ9/Honey_and_Oat_9.jpg" class="w-full h-full object-cover" alt="Turmeric and Honey Soap">
             </div>
             <div>
                 <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">Complexion Cure-All</span>
@@ -177,82 +181,84 @@
                 </p>
                 <p class="text-3xl font-bold text-stone-800">$8.00 / Full Bar</p>
             </div>
-            <div class="order-1 md:order-2 product-photo-container">
-                <img src="https://i.postimg.cc/kXgyrmDx/Honey_and_Oat_1.jpg" alt="Honey & Oatmeal Soap">
+            <div class="order-1 md:order-2 product-photo-container shadow-inner">
+                <img src="https://i.postimg.cc/kXgyrmDx/Honey_and_Oat_1.jpg" class="w-full h-full object-cover" alt="Oatmeal and Honey Soap">
             </div>
         </div>
 
-        <!-- NEW: PEPPERMINT -->
+        <!-- PEPPERMINT -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
-            <div class="product-photo-container bg-emerald-50 border-emerald-100 relative overflow-hidden">
-                <!-- Visual Placeholder while photo is missing -->
-                <div class="absolute inset-0 opacity-10 flex items-center justify-center">
-                    <img src="https://i.postimg.cc/WFhDq7t6/Goat-Transparent.png" alt="" class="w-1/2 rotate-12">
-                </div>
-                <div class="text-center z-10 px-6">
-                    <p class="brand-heading text-emerald-800 text-lg uppercase tracking-widest mb-2">Photo Coming Soon</p>
-                    <p class="text-emerald-600/60 italic">Curing on the racks...</p>
+            <div class="product-photo-container shadow-inner">
+                <!-- Using a placeholder until the specific photo link is available -->
+                <div class="flex flex-col items-center justify-center p-12 text-center text-stone-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <p class="brand-heading uppercase tracking-widest">Photo Coming Soon</p>
                 </div>
             </div>
             <div>
-                <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">The Morning Wakeup</span>
-                <h2 class="text-4xl md:text-5xl mb-6 leading-tight uppercase">Goat & Peppermint</h2>
+                <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">The Morning Wake-Up</span>
+                <h2 class="text-4xl md:text-5xl mb-6 leading-tight uppercase">Peppermint & Goat Milk</h2>
                 <p class="text-2xl text-stone-600 mb-6">
-                    A punchy, cooling bar that doesn't mess around. Pure peppermint essential oil meets our signature goat milk base for a tingly, high-energy lather that snaps you awake.
+                    A sharp, refreshing wake-up call for your skin. The creaminess of the goat milk balances the cooling tingle of pure peppermint essential oil. Perfect for post-gym or groggy mornings.
                 </p>
                 <p class="text-3xl font-bold text-stone-800">$8.00 / Full Bar</p>
             </div>
         </div>
 
-        <!-- COMING SOON SECTION -->
-        <h2 class="text-center text-5xl mb-16 mt-24 uppercase brand-heading border-b-2 border-stone-100 pb-4 text-emerald-900">Coming to the Racks</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
-            <div class="coming-soon-card">
-                <div class="badge uppercase brand-heading mb-4">Thailand Series</div>
-                <h3 class="text-2xl uppercase mb-3">Lemongrass & Ginger</h3>
-                <p class="text-lg text-stone-500">A warm, citrus-spice aroma with a French Green Clay swirl. Fresh and revitalizing.</p>
+        <!-- SPECIALTY BARS SECTION -->
+        <h2 class="text-center text-5xl mb-16 mt-24 uppercase brand-heading border-b-2 border-stone-100 pb-4 text-emerald-900">The Specialty Bars</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+            <!-- Shampoo Bar -->
+            <div class="bg-stone-50 p-10 border border-stone-200 flex flex-col items-center text-center rounded-sm">
+                <span class="text-amber-800 uppercase tracking-widest mb-2 text-sm font-bold">The Scalp Savior</span>
+                <h3 class="text-3xl uppercase mb-4 leading-tight">Mallow Root & Jamaican Black Castor Oil Shampoo</h3>
+                <p class="text-xl text-stone-600 mb-6 italic">Incredible slip for detangling, deep hydration for curls, and castor oil for a healthy shine that doesn't mess around.</p>
+                <p class="text-2xl font-bold text-emerald-900">$12.00 / Bar</p>
             </div>
-            <div class="coming-soon-card">
-                <div class="badge uppercase brand-heading mb-4">Ultra-Gentle</div>
-                <h3 class="text-2xl uppercase mb-3">Rose & Calendula</h3>
-                <p class="text-lg text-stone-500">Pink kaolin clay and oil-infused calendula petals for a soft, powdery glow.</p>
-            </div>
-            <div class="coming-soon-card">
-                <div class="badge uppercase brand-heading mb-4">Spring Limited</div>
-                <h3 class="text-2xl uppercase mb-3">Carrot & Thyme</h3>
-                <p class="text-lg text-stone-500">Vivid beta-carotene orange with earthy garden thyme. Farm-to-shower excellence.</p>
+            <!-- Facial Bar -->
+            <div class="bg-stone-50 p-10 border border-stone-200 flex flex-col items-center text-center rounded-sm">
+                <span class="text-amber-800 uppercase tracking-widest mb-2 text-sm font-bold">The T-Zone Technician</span>
+                <h3 class="text-3xl uppercase mb-4 leading-tight">Sea Clay, Tea Tree & Peppermint Facial Bar</h3>
+                <p class="text-xl text-stone-600 mb-6 italic">A mineral-rich detox that pulls out the toxins while the peppermint provides a cooling snap to wake up your pores.</p>
+                <p class="text-2xl font-bold text-emerald-900">$8.00 / Bar</p>
             </div>
         </div>
 
-        <!-- SPECIALTY SECTION -->
-        <h2 class="text-center text-5xl mb-16 uppercase brand-heading border-b-2 border-stone-100 pb-4 text-emerald-900">Specialty Treatments</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-6 rounded-lg border border-stone-100">
-                <div class="w-full md:w-1/2 product-photo-container bg-stone-50 text-stone-400 brand-heading uppercase text-center p-4">Deep Detox (Coming Soon)</div>
-                <div class="w-full md:w-1/2">
-                    <span class="badge uppercase brand-heading !bg-emerald-800">The Facial Bar</span>
-                    <h3 class="text-3xl mb-4 leading-tight uppercase">Sea Clay & Tea Tree</h3>
-                    <p class="text-xl text-stone-600 mb-4">Specifically formulated for the face. Mineral-rich sea silt and tea tree draw out impurities without over-drying.</p>
-                    <p class="text-2xl font-bold text-stone-800">$8.00 / Bar</p>
-                </div>
+        <!-- COMING SOON -->
+        <h2 class="text-center text-5xl mb-16 mt-24 uppercase brand-heading border-b-2 border-stone-100 pb-4 text-emerald-900">Coming to the Racks</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
+            <div class="bg-white border border-stone-200 p-8 rounded-sm text-center">
+                <div class="badge uppercase brand-heading mb-4">Thailand Series</div>
+                <h3 class="text-2xl uppercase mb-3">Lemongrass & Ginger</h3>
+                <p class="text-lg text-stone-500">A warm, citrus-spice aroma with a French Green Clay swirl.</p>
             </div>
-            <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-6 rounded-lg border border-stone-100">
-                <div class="w-full md:w-1/2 product-photo-container bg-emerald-50 text-emerald-800/40 brand-heading uppercase text-center p-4">Curing Now</div>
-                <div class="w-full md:w-1/2">
-                    <span class="badge uppercase brand-heading">The Hair Hero</span>
-                    <h3 class="text-3xl mb-4 leading-tight uppercase">Mallow & Black Castor</h3>
-                    <p class="text-xl text-stone-600 mb-4">Marshmallow root for detangling slip and Jamaican Black Castor Oil for scalp health. Plastic-free.</p>
-                    <p class="text-2xl font-bold text-stone-800">$12.00 / Puck</p>
-                </div>
+            <div class="bg-white border border-stone-200 p-8 rounded-sm text-center">
+                <div class="badge uppercase brand-heading mb-4">Ultra-Gentle</div>
+                <h3 class="text-2xl uppercase mb-3">Rose & Calendula</h3>
+                <p class="text-lg text-stone-500">Pink kaolin clay and oil-infused petals for a soft, powdery glow.</p>
+            </div>
+            <div class="bg-white border border-stone-200 p-8 rounded-sm text-center">
+                <div class="badge uppercase brand-heading mb-4">Spring Limited</div>
+                <h3 class="text-2xl uppercase mb-3">Carrot & Thyme</h3>
+                <p class="text-lg text-stone-500">Vivid beta-carotene orange with earthy garden thyme.</p>
             </div>
         </div>
     </main>
 
     <footer class="bg-stone-900 text-white pt-20 pb-10 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-4xl mx-auto text-center">
             <h3 class="text-4xl mb-6 uppercase">Ready to wash up?</h3>
             <p class="text-stone-300 text-2xl mb-10">Email Eva to see what's currently cured and ready for shipping.</p>
-            <a href="mailto:eva@smartalecksoap.com" class="text-3xl font-bold text-amber-200 border-b-2 border-amber-200 pb-1 hover:text-white transition-colors brand-heading">eva@smartalecksoap.com</a>
+            
+            <div class="flex flex-col items-center gap-4">
+                <button 
+                    onclick="copyEmail('eva@smartalecksoap.com', this)"
+                    class="text-3xl font-bold text-amber-200 border-b-2 border-amber-200 pb-1 hover:text-white transition-colors brand-heading mb-4"
+                >
+                    eva@smartalecksoap.com
+                </button>
+                <a href="mailto:eva@smartalecksoap.com" class="text-stone-500 text-sm underline uppercase tracking-widest hover:text-stone-300">Or open in mail app</a>
+            </div>
             
             <div class="mt-20 pt-10 border-t border-stone-800">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left mb-10">
@@ -269,5 +275,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function copyEmail(email, element) {
+            const tempInput = document.createElement("input");
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById("toast");
+            toast.className = "show";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+
+            if (element.tagName === 'BUTTON' && element.innerText.includes('ORDER')) {
+                const originalText = element.innerText;
+                element.innerText = "COPIED TO CLIPBOARD!";
+                element.classList.add('bg-green-100');
+                setTimeout(() => {
+                    element.innerText = originalText;
+                    element.classList.remove('bg-green-100');
+                }, 2500);
+            }
+        }
+    </script>
 </body>
 </html>
