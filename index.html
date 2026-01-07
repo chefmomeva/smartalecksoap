@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Aleck Soap Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ADOBE FONTS -->
+    <link rel="stylesheet" href="https://use.typekit.net/pdf3ssm.css">
+    
+    <style>
+        :root {
+            --brand-heading: "custard", sans-serif;
+            --brand-body: "marydale", sans-serif; 
+        }
+
+        h1, h2, .brand-heading { 
+            font-family: var(--brand-heading);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        
+        body, p, span, h3 { 
+            font-family: var(--brand-body);
+            font-weight: 400;
+        }
+
+        .botanical-bg {
+            background-color: #064e3b; 
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23065f46' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4v-4H4v4H0v2h4v4h2v-4h4v-2H6zm30 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .btn-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+        }
+
+        .marydale-large {
+            font-size: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .product-photo-container {
+            aspect-ratio: 1 / 1;
+            background-color: #f5f5f5;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+        }
+
+        .product-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+        }
+
+        .badge {
+            background: #d97706;
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            border-radius: 99px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon-card {
+            border: 1px dashed #d1d5db;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            background: #fdfdfd;
+            transition: all 0.3s ease;
+        }
+        
+        .coming-soon-card:hover {
+            border-color: #065f46;
+            background: #f0fdf4;
+        }
+
+        .legal-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #a8a29e;
+        }
+    </style>
+</head>
+<body class="bg-[#fdfcf8] text-stone-900 leading-relaxed">
+
+    <!-- HEADER SECTION -->
+    <section class="botanical-bg text-white py-16 md:py-24 px-6 border-b-8 border-amber-900/20">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+            
+            <div class="w-28 h-28 md:w-36 md:h-36 mb-6">
+                <img src="https://i.postimg.cc/WFhDq7t6/Goat-Transparent.png" alt="Smart Aleck Goat" class="w-full h-full object-contain logo-glow">
+            </div>
+
+            <div class="inline-block px-4 py-1 border border-emerald-400 text-emerald-300 text-sm uppercase tracking-[0.3em] mb-8 font-bold brand-heading">
+                Small Batch • Goat Milk • Tallow • 5% Castor
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl tracking-tight leading-none uppercase mb-8">
+                Smart Aleck <br> Soap Company
+            </h1>
+
+            <p class="text-xl md:text-3xl text-emerald-100 mb-10 opacity-90 max-w-2xl">
+                High-end botanical soaps with a side of sass.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-6 w-full max-w-md md:max-w-none">
+                <a href="mailto:eva@smartalecksoap.com" class="bg-amber-100 text-emerald-950 px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-white transition-all btn-shadow text-center brand-heading text-lg">
+                    Order via Email
+                </a>
+                <a href="#collection" class="border border-emerald-400 text-white px-10 py-4 rounded-sm font-bold uppercase tracking-widest hover:bg-emerald-800 transition-all text-center brand-heading text-lg">
+                    The Collection
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE STORY / MISSION -->
+    <section class="py-20 bg-white border-b border-stone-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-xl uppercase tracking-[0.4em] text-amber-800 mb-4">The Origin Story</h2>
+                    <h3 class="text-4xl md:text-5xl mb-6 brand-heading">From Thailand to the Tallow Pot.</h3>
+                    <p class="text-2xl text-stone-600 mb-6 marydale-large">
+                        It started with a trip to Thailand and a bar of turmeric soap that changed everything. As a restaurant professional, I knew how to source the best ingredients—so I applied that "Chef's Logic" to the shower.
+                    </p>
+                    <p class="text-2xl text-stone-600 marydale-large">
+                        Smart Aleck is about zero synthetics, farm-fresh goat milk, and a base of restaurant-grade beef tallow. It's high-end skincare that doesn't take itself too seriously.
+                    </p>
+                </div>
+                <div class="bg-stone-50 p-8 border-2 border-stone-100 rounded-lg italic text-2xl text-stone-700">
+                    "I use ingredients so pure, you could literally wash your mouth out with them. But please don't—they taste like soap."
+                    <div class="mt-4 text-amber-800 font-bold not-italic brand-heading uppercase tracking-widest">— Eva, Head Smart Aleck</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT COLLECTION -->
+    <main id="collection" class="max-w-5xl mx-auto py-20 px-6">
+        
+        <h2 class="text-center text-5xl mb-16 uppercase brand-heading border-b-2 border-stone-100 pb-4 text-emerald-900">The Core Collection</h2>
+
+        <!-- TURMERIC -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+            <div class="product-photo-container">
+                <img src="https://i.postimg.cc/Bb2DHJZ9/Honey-and-Oat-9.jpg" alt="Turmeric & Honey Soap">
+            </div>
+            <div>
+                <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">Complexion Cure-All</span>
+                <h2 class="text-4xl md:text-5xl mb-6 leading-tight uppercase">Turmeric & Honey</h2>
+                <p class="text-2xl text-stone-600 mb-6">
+                    Our flagship bar. Inspired by traditional Thai apothecary methods. Slow-churned tallow, raw honey, and anti-inflammatory turmeric for a glowing, "just-back-from-vacation" look.
+                </p>
+                <p class="text-3xl font-bold text-stone-800">$8.00 / Full Bar</p>
+            </div>
+        </div>
+
+        <!-- OATMEAL -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+            <div class="order-2 md:order-1">
+                <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">Sensitive Soul</span>
+                <h2 class="text-4xl md:text-5xl mb-6 leading-tight uppercase">Honey & Oatmeal</h2>
+                <p class="text-2xl text-stone-600 mb-6">
+                    The bar for those who have a "dirty mouth" but sensitive skin. Colloidal oatmeal and goat milk proteins provide a velvety lather that calms redness and soothes dry patches.
+                </p>
+                <p class="text-3xl font-bold text-stone-800">$8.00 / Full Bar</p>
+            </div>
+            <div class="order-1 md:order-2 product-photo-container">
+                <img src="https://i.postimg.cc/kXgyrmDx/Honey_and_Oat_1.jpg" alt="Honey & Oatmeal Soap">
+            </div>
+        </div>
+
+        <!-- NEW: PEPPERMINT -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+            <div class="product-photo-container bg-emerald-50 border-emerald-100 relative overflow-hidden">
+                <!-- Visual Placeholder while photo is missing -->
+                <div class="absolute inset-0 opacity-10 flex items-center justify-center">
+                    <img src="https://i.postimg.cc/WFhDq7t6/Goat-Transparent.png" alt="" class="w-1/2 rotate-12">
+                </div>
+                <div class="text-center z-10 px-6">
+                    <p class="brand-heading text-emerald-800 text-lg uppercase tracking-widest mb-2">Photo Coming Soon</p>
+                    <p class="text-emerald-600/60 italic">Curing on the racks...</p>
+                </div>
+            </div>
+            <div>
+                <span class="text-xl uppercase text-amber-800 tracking-widest mb-4 block">The Morning Wakeup</span>
+                <h2 class="text-4xl md:text-5xl mb-6 leading-tight uppercase">Goat & Peppermint</h2>
+                <p class="text-2xl text-stone-600 mb-6">
+                    A punchy, cooling bar that doesn't mess around. Pure peppermint essential oil meets our signature goat milk base for a tingly, high-energy lather that snaps you awake.
+                </p>
+                <p class="text-3xl font-bold text-stone-800">$8.00 / Full Bar</p>
+            </div>
+        </div>
+
+        <!-- COMING SOON SECTION -->
+        <h2 class="text-center text-5xl mb-16 mt-24 uppercase brand-heading border-b-2 border-stone-100 pb-4 text-emerald-900">Coming to the Racks</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-32">
+            <div class="coming-soon-card">
+                <div class="badge uppercase brand-heading mb-4">Thailand Series</div>
+                <h3 class="text-2xl uppercase mb-3">Lemongrass & Ginger</h3>
+                <p class="text-lg text-stone-500">A warm, citrus-spice aroma with a French Green Clay swirl. Fresh and revitalizing.</p>
+            </div>
+            <div class="coming-soon-card">
+                <div class="badge uppercase brand-heading mb-4">Ultra-Gentle</div>
+                <h3 class="text-2xl uppercase mb-3">Rose & Calendula</h3>
+                <p class="text-lg text-stone-500">Pink kaolin clay and oil-infused calendula petals for a soft, powdery glow.</p>
+            </div>
+            <div class="coming-soon-card">
+                <div class="badge uppercase brand-heading mb-4">Spring Limited</div>
+                <h3 class="text-2xl uppercase mb-3">Carrot & Thyme</h3>
+                <p class="text-lg text-stone-500">Vivid beta-carotene orange with earthy garden thyme. Farm-to-shower excellence.</p>
+            </div>
+        </div>
+
+        <!-- SPECIALTY SECTION -->
+        <h2 class="text-center text-5xl mb-16 uppercase brand-heading border-b-2 border-stone-100 pb-4 text-emerald-900">Specialty Treatments</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-6 rounded-lg border border-stone-100">
+                <div class="w-full md:w-1/2 product-photo-container bg-stone-50 text-stone-400 brand-heading uppercase text-center p-4">Deep Detox (Coming Soon)</div>
+                <div class="w-full md:w-1/2">
+                    <span class="badge uppercase brand-heading !bg-emerald-800">The Facial Bar</span>
+                    <h3 class="text-3xl mb-4 leading-tight uppercase">Sea Clay & Tea Tree</h3>
+                    <p class="text-xl text-stone-600 mb-4">Specifically formulated for the face. Mineral-rich sea silt and tea tree draw out impurities without over-drying.</p>
+                    <p class="text-2xl font-bold text-stone-800">$8.00 / Bar</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 items-center bg-white p-6 rounded-lg border border-stone-100">
+                <div class="w-full md:w-1/2 product-photo-container bg-emerald-50 text-emerald-800/40 brand-heading uppercase text-center p-4">Curing Now</div>
+                <div class="w-full md:w-1/2">
+                    <span class="badge uppercase brand-heading">The Hair Hero</span>
+                    <h3 class="text-3xl mb-4 leading-tight uppercase">Mallow & Black Castor</h3>
+                    <p class="text-xl text-stone-600 mb-4">Marshmallow root for detangling slip and Jamaican Black Castor Oil for scalp health. Plastic-free.</p>
+                    <p class="text-2xl font-bold text-stone-800">$12.00 / Puck</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-stone-900 text-white pt-20 pb-10 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-4xl mb-6 uppercase">Ready to wash up?</h3>
+            <p class="text-stone-300 text-2xl mb-10">Email Eva to see what's currently cured and ready for shipping.</p>
+            <a href="mailto:eva@smartalecksoap.com" class="text-3xl font-bold text-amber-200 border-b-2 border-amber-200 pb-1 hover:text-white transition-colors brand-heading">eva@smartalecksoap.com</a>
+            
+            <div class="mt-20 pt-10 border-t border-stone-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left mb-10">
+                    <div>
+                        <h4 class="brand-heading uppercase text-amber-100 text-sm tracking-widest mb-3">Manufacturing Disclosure</h4>
+                        <p class="legal-text">Handcrafted in a private home workshop. These products have not been inspected by the FDA. We maintain a Chef's Standard of sanitation.</p>
+                    </div>
+                    <div>
+                        <h4 class="brand-heading uppercase text-amber-100 text-sm tracking-widest mb-3">Cosmetic Disclaimer</h4>
+                        <p class="legal-text">Intended for cleansing only. Not intended to diagnose, treat, or cure any disease. If irritation occurs, stop being a smart aleck and stop using.</p>
+                    </div>
+                </div>
+                <div class="text-stone-500 text-xs uppercase tracking-widest brand-heading">&copy; 2026 Smart Aleck Soap Company</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
